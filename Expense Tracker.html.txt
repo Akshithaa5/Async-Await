@@ -123,3 +123,20 @@
     </script>
   </body>
 </html>
+
+const Buy1 = document.createElement('input')
+          Buy1.type = 'button'
+          Buy1.value = 'Buy1'
+          Buy1.onclick = () => {
+
+            axios.get("https://crudcrud.com/api/bfe85926b0534607a6288de522cf077d/appointmentdata")
+            .then((response) =>{
+              const phonenumberElement = document.getElementsByName('quantity')[0];
+              const currentValue = phonenumberElement.value;
+              const newValue = currentValue - 1;
+              phonenumberElement.value = newValue;
+            })
+            .catch((err) =>{
+              console.log(err);
+            })
+          }
